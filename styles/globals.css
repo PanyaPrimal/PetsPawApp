@@ -4,8 +4,15 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+html {
+  background-color: #F8F8F7;
+}
+
 body {
   font-family: "Jost", sans-serif;
+  height: 100vh;
+  max-width: 1440px;
+  margin: auto;
 }
 
 .orange_grad {

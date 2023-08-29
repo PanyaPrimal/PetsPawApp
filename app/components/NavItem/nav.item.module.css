@@ -1,0 +1,29 @@
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.navItemImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 190px;
+  width: 130px;
+  border: 4px solid rgba(255, 255, 255, 0.60);
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.firstImage {
+  transform: scale(1.2);
+}
+
+.navItemImage:hover {
+  border: 4px solid #FFF;
+}
+
+.navItemImage:active {
+  border: 4px solid #FBE0DC;
+}

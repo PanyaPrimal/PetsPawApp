@@ -1,5 +1,6 @@
 'use client'
-
+import { usePathname } from "next/navigation"
+import React from 'react';
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./nav.item.module.css";
@@ -15,10 +16,12 @@ const NavItem = ({
   background,
   isFirstImage
 }) => {
+  const router = usePathname();
+
   return (
     <Link 
       href={path}
-      className={`${styles.navItem}`}
+      className={`${styles.navItem} ${router === path ? styles.active : '' }`}
     >
         <div 
           className={`${styles.navItemImage}`}
@@ -32,7 +35,10 @@ const NavItem = ({
             height={height}
           />
         </div>
-      <NavButton buttonText={buttonText}/>
+      <NavButton
+        className={styles.navButton}
+        buttonText={buttonText}
+      />
     </Link>
   );
 }

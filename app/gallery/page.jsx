@@ -3,7 +3,7 @@ import styles from './gallery.module.css';
 
 const GalleryPage = () => {
   return (
-    <div>GalleryPage</div>
+    <div className='bg-black w-full h-full text-white'>GalleryPage</div>
   )
 }
 

@@ -6,12 +6,12 @@ import { ThemeToggler } from '../ThemeToggler/ThemeToggler';
 export const LeftSidebar = () => {
   return (
     <aside className='w- flex flex-col'>
-      <div className='flex justify-around'>
+      <div className='flex justify-between'>
         <Logo />
         <ThemeToggler />
       </div>
 
-      <h2 className='mt-[85px] text-[#1D1D1D] text-4xl font-medium leading-[58px]'>Hi!👋</h2>
+      <h2 className='mt-[80px] text-[#1D1D1D] text-4xl font-medium leading-[58px]'>Hi!👋</h2>
 
       <h5 className='mt-[10px] mb-[60px] text-[#8C8C8C]'>Welcome to MacPaw Bootcamp 2023</h5>
 

@@ -1,6 +1,7 @@
 import React from "react";
 import '@styles/globals.css';
 import { LeftSidebar } from "./components/LeftSidebar/LeftSidebar";
+import Providers from "./Providers";
 
 export const metadata = {
   title: "PetsPaw",
@@ -9,14 +10,20 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
  return (
-    <html lang='en'>
-      <head>
-        <link rel="icon" href="/assets/icons/favicon.svg" sizes="any" />
-      </head>
-      <body className='app w-full flex pt-[30px] pl-[147px] pr-[30px]'>
-        <LeftSidebar className="max-w-[665px] w-full"></LeftSidebar>
-        {children}
-      </body>
-    </html>
+      <html 
+        lang='en'
+        className='light bg-opacity-0 dark:bg-black bg-white-soft'
+        style={{ colorScheme: 'light' }}
+      >
+        <head>
+          <link rel='icon' href='/assets/icons/favicon.svg' sizes='any' />
+        </head>
+        <Providers>
+          <body className='app w-full flex pt-[30px] pl-[147px] pr-[30px]'>
+              <LeftSidebar className="max-w-[665px] w-full"></LeftSidebar>
+              {children}
+          </body>
+        </Providers>
+      </html>
   )
 }

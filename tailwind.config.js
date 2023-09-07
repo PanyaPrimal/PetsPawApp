@@ -7,12 +7,32 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      backgroundColor: {
+        'initial': 'initial',
       },
+      screens: {
+        s: { max: "639px" },
+        m: { max: "768px" },
+        l: { max: "1024px" },
+        xl: { max: "1440px" },
+				xxl: { max: "1535px" },
+			},
+      colors: {
+				primary: "#FF868E",
+				"primary-soft": "#FBE0DC",
+				"primary-dark": "#543C3D",
+				success: "#97EAB9",
+				warning: "#FFD280",
+				purple: "#B4B7FF",
+				"white-soft": "#F8F8F8",
+				gray: "#E5E5E5",
+				"gray-dark": "#8C8C8C",
+				black: "#1D1D1D",
+				"black-soft": "#282828",
+				"black-light": "#343434",
+			},
     },
   },
-  plugins: [],
+  darkMode: "class",
+	plugins: [require("tailwindcss-global-dark")],
 }

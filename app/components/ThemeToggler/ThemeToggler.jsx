@@ -1,32 +1,35 @@
 'use client'
 
-import { ThemeEyeClosed, ThemeEyeOpen, ThemeTogglerLeft, ThemeTogglerRight } from '@public/assets/svg';
-import React, { useState, useEffect } from 'react';
-import styles from './togler.module.css';
+import { ThemeEyeClosed, ThemeEyeOpen, ThemeTogglerLeft, ThemeTogglerRight } from '@public/assets/svg'
+import React, { useEffect, useState } from 'react'
+import { useTheme } from 'next-themes'
 
 export const ThemeToggler = () => {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const { theme, setTheme } = useTheme()
+  
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
 
-  useEffect(() => {
-    document.body.classList.toggle('dark', isDarkTheme);
-  }, [isDarkTheme]);
+  if (!mounted) {
+    return null
+  }
 
   const toggleTheme = () => {
-    setIsDarkTheme(!isDarkTheme);
-  };
+    setTheme(theme === 'dark' ? 'light' : 'dark')
+  }
 
   return (
     <div className='flex items-center mr-[16px] cursor-pointer' onClick={toggleTheme}>
-      {isDarkTheme ? (
-        <ThemeEyeClosed className={`rounded-[20px] w-6 h-6 bg-[#FFFFFF0D] p-1 bg-opacity-5 mr-[5px] ${styles}`} />
+      {theme === 'dark' ? (
+        <ThemeEyeClosed className={`rounded-[20px] w-6 h-6 bg-[#FFFFFF0D] p-1 bg-opacity-5 mr-[5px]`} />
       ) : (
-        <ThemeEyeOpen className={`rounded-[20px] w-6 h-6 bg-white p-1 mr-[5px] ${styles}`} />
+        <ThemeEyeOpen className={`rounded-[20px] w-6 h-6 bg-white p-1 mr-[5px]`} />
       )}
-      {isDarkTheme ? (
-        <ThemeTogglerLeft className={{styles}} />
+      {theme === 'dark' ? (
+        <ThemeTogglerLeft/>
       ) : (
-        <ThemeTogglerRight className={{styles}} />
+        <ThemeTogglerRight/>
       )}
     </div>
-  );
-};
+  )
+}

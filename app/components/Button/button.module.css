@@ -11,3 +11,11 @@
   border-radius: 10px;
   background-color: #fff;
 }
+
+[color-scheme="light"] .button {
+  color: red; 
+}
+
+[color-scheme="dark"] .button {
+  color: green; 
+}

@@ -11,13 +11,13 @@ export const LeftSidebar = () => {
         <ThemeToggler />
       </div>
 
-      <h2 className='mt-[80px] text-black dark:text-white text-4xl font-medium leading-[58px]'>
+      <h2 className='mt-[80px] text-4xl font-medium leading-[58px]'>
         Hi!👋
       </h2>
 
       <h5 className='mt-[10px] mb-[60px] text-gray-dark'>Welcome to MacPaw Bootcamp 2023</h5>
 
-      <h4 className='mb-[20px] text-black dark:text-white font-medium'>Lets start using The Cat API</h4>
+      <h4 className='mb-[20px] font-medium'>Lets start using The Cat API</h4>
 
       <Navigation />
       

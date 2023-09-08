@@ -10,20 +10,20 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
  return (
-      <html 
-        lang='en'
-        className='light bg-opacity-0 dark:bg-black bg-white-soft'
-        style={{ colorScheme: 'light' }}
-      >
-        <head>
-          <link rel='icon' href='/assets/icons/favicon.svg' sizes='any' />
-        </head>
-        <Providers>
-          <body className='app w-full flex pt-[30px] pl-[147px] pr-[30px]'>
-              <LeftSidebar className="max-w-[665px] w-full"></LeftSidebar>
-              {children}
-          </body>
-        </Providers>
-      </html>
+  <html 
+    lang='en'
+    className='light bg-opacity-0'
+    style={{ colorScheme: '' }}
+  >
+    <head>
+      <link rel='icon' href='/assets/icons/favicon.svg' sizes='any' />
+    </head>
+    <Providers>
+      <body className='app bg-white-soft dark:bg-black relative dark:text-white w-full flex pt-[30px] pl-[147px] pr-[30px]'>
+          <LeftSidebar className="max-w-[665px] w-full"></LeftSidebar>
+          {children}
+      </body>
+    </Providers>
+  </html>
   )
 }

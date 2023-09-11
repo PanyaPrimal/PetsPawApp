@@ -1,15 +1,15 @@
 'use client'
 
-import { ThemeEyeClosed, ThemeEyeOpen, ThemeTogglerLeft, ThemeTogglerRight } from '@public/assets/svg'
 import React, { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
+import { ThemeEyeClosed, ThemeEyeOpen, ThemeTogglerLeft, ThemeTogglerRight } from '@public/assets/svg'
 
 export const ThemeToggler = () => {
-  const { theme, setTheme } = useTheme()
-  
   const [mounted, setMounted] = useState(false)
-  useEffect(() => setMounted(true), [])
+  const { theme, setTheme } = useTheme()
 
+  useEffect(() => setMounted(true), [])
+  
   if (!mounted) {
     return null
   }

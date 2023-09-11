@@ -1,6 +1,5 @@
 'use client'
 
-import { useTheme } from 'next-themes';
 import { usePathname } from "next/navigation"
 import React from 'react';
 import Link from "next/link";
@@ -18,7 +17,6 @@ const NavItem = ({
   background,
   isFirstImage
 }) => {
-  const { theme } = useTheme();
   const router = usePathname();
 
   return (
@@ -27,7 +25,6 @@ const NavItem = ({
       className={`
         ${styles.navItem} 
         ${router === path ? styles['navItem--active'] : '' }
-        ${theme === 'dark' ? styles['theme-dark'] : styles['theme-light'] }
       `}
     >
         <div 
@@ -45,7 +42,10 @@ const NavItem = ({
           />
         </div>
       <NavButton
-        className={styles.navButton}
+        className={`
+          ${styles.navButton}
+        dark:hover:bg-blue-500 dark:bg-black-soft
+        `}
         buttonText={buttonText}
       />
     </Link>

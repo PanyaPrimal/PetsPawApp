@@ -4,15 +4,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-[color-scheme="light"] html {
-  color: red; /* Цвет текста для светлой темы */
-}
-
-/* Стили для темной темы */
-[color-scheme="dark"] html {
-  color: green; /* Цвет текста для темной темы */
-}
-
 body {
   font-family: "Jost", sans-serif;
   height: 100vh;

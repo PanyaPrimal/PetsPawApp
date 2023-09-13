@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 16px;
   transition: all 0.3s ease;
+  @apply lg:mr-4;
 
   &--active,
   &:active {
@@ -32,7 +32,7 @@
 }
 
 .navItemImage {
-  display: flex;
+  @apply 3sm:max-md:hidden md:flex;
   justify-content: center;
   align-items: center;
   height: 190px;
@@ -47,10 +47,8 @@
 }
 
 .navButton {
-  
-  padding: 8px 0;
+  @apply bg-white 3sm:max-md:mb-5 py-2 sm:max-md:py-3;
   width: 100%;
-
   color: #FF868E;
   text-align: center;
   font-size: 12px;

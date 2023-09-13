@@ -11,11 +11,13 @@ module.exports = {
         'initial': 'initial',
       },
       screens: {
-        s: { max: "639px" },
-        m: { max: "768px" },
-        l: { max: "1024px" },
-        xl: { max: "1440px" },
-				xxl: { max: "1535px" },
+        '3sm': '50px',
+        '2sm': '320px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1440px',
+				'2xl': '1920px',
 			},
       colors: {
 				primary: "#FF868E",

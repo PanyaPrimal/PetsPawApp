@@ -3,7 +3,9 @@ import { HomePageContent } from "./components/HomePageContent/HomePageContent";
 
 const Home = () => {
   return (
-    <HomePageContent className="w-3/5"></HomePageContent>
+    <div className={' bg-primary-soft dark:bg-black-soft ml-auto mb-[30px] rounded-[20px]'}>
+      <HomePageContent></HomePageContent>
+    </div>
   )
 }
 

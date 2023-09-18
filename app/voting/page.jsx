@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { ImageService } from '@service/image.service';
 import { VoteService } from '@service/vote.service';
+import PageContainer from '@app/components/PageContainer/PageContainer';
 
 const VotingPage = () => {
   const [image, setImage] = useState(null);
@@ -50,11 +51,10 @@ const VotingPage = () => {
   };
 
   return (
-    <div>
+    <PageContainer>
       <h1>Voting Page</h1>
       {image && (
         <div>
-          <h2>Image</h2>
           <img src={image.url} alt="Cat" />
           <div>
             <button onClick={() => handleVote(1)}>Up</button>
@@ -64,7 +64,7 @@ const VotingPage = () => {
         </div>
       )}
       <button onClick={fetchRandomImage}>Load Another Image</button>
-    </div>
+    </PageContainer>
   );
 };
 

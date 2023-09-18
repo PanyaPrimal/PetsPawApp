@@ -2,15 +2,15 @@ import React from 'react'
 import PageContainer from '@app/components/PageContainer/PageContainer'
 
 export const metadata = {
-  title: 'Gallery',
+  title: 'Dislikes',
 }
 
-const GalleryPage = () => {
+const DislikesPage = () => {
   return (
     <PageContainer>
-      <div className=''>GalleryPage</div>
+      <div className=''>DislikesPage</div>
     </PageContainer>
   )
 }
 
-export default GalleryPage;
+export default DislikesPage;

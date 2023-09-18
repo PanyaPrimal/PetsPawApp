@@ -1,14 +1,16 @@
 import React from 'react'
-import styles from './selected.module.css';
+import PageContainer from '@app/components/PageContainer/PageContainer'
 
 export const metadata = {
-  title: 'Favourites',
+  title: 'Selected',
 }
 
 const BreedsSelected = () => {
   return (
-    <div className={styles.divv}>BreedsSelected</div>
+    <PageContainer>
+      <div className=''>BreedsSelected</div>
+    </PageContainer>
   )
 }
 
-export default BreedsSelected
+export default BreedsSelected;

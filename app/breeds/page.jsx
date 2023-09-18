@@ -1,5 +1,6 @@
 import React from 'react';
-import styles from './breeds.module.css';
+import { Header } from '@app/components/Header/Header';
+import PageContainer from '@app/components/PageContainer/PageContainer';
 
 export const metadata = {
   title: 'Breeds',
@@ -7,7 +8,9 @@ export const metadata = {
 
 const BreedsPage = () => {
   return (
-    <div className={styles.divv}>BreedsPage</div>
+    <PageContainer>
+      <div className=''>BreedsPage</div>
+    </PageContainer>
   )
 }
 

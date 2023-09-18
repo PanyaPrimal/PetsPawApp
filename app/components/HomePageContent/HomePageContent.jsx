@@ -9,8 +9,8 @@ export const HomePageContent = () => {
       '>        
         <div className='h-full ml-[560px] absolute right-0 top-0 overflow-hidden'>
           <div className='
-            w-[calc(100%-60px)] h-[calc(100vh-60px)] absolute top-[30px]
-            ml-[30px] 
+            w-[calc(100%-60px)] h-[calc(100vh-60px)]
+            absolute top-[30px] ml-[30px] 
             bg-primary-soft dark:bg-black-soft
             rounded-[20px]
             z-[-1]

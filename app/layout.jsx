@@ -2,7 +2,6 @@ import React from "react";
 import '@styles/globals.css';
 import { LeftSidebar } from "./components/LeftSidebar/LeftSidebar";
 import Providers from "./Providers";
-import Home from "./page";
 
 export const metadata = {
   title: "PetsPaw",
@@ -28,7 +27,7 @@ export default function RootLayout({ children }) {
           md:pl-[147px]
         '>
           <LeftSidebar></LeftSidebar>
-          <div className={'hidden lg:flex w-full'}>
+          <div className='w-[calc(100%-60px)] h-[calc(100%-80px)] hidden lg:flex'>
             {children}
           </div>
         </body>

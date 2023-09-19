@@ -8,7 +8,7 @@ export const metadata = {
 const GalleryPage = () => {
   return (
     <PageContainer>
-      <div className=''>GalleryPage</div>
+      <div>GalleryPage</div>
     </PageContainer>
   )
 }

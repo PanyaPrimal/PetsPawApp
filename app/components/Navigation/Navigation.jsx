@@ -3,7 +3,7 @@ import NavItem from '../NavItem/NavItem';
 
 export const Navigation = () =>{
   return (
-    <nav className='md:flex justify-evenly'>
+    <nav className='md:flex justify-around'>
       <NavItem
         height="124"
         width="100"

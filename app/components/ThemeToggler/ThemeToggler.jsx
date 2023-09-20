@@ -19,7 +19,7 @@ export const ThemeToggler = () => {
   }
 
   return (
-    <div className='flex items-center mr-[16px] 3sm:max-md:mr-0 cursor-pointer' onClick={toggleTheme}>
+    <div className='flex items-center mr-[16px] 3sm:max-lg:mr-0 cursor-pointer' onClick={toggleTheme}>
       {theme === 'dark' ? (
         <ThemeEyeClosed className={`rounded-[20px] w-6 h-6 bg-[#FFFFFF0D] p-1 bg-opacity-5 mr-[5px]`} />
       ) : (

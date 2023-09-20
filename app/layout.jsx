@@ -1,14 +1,29 @@
-import React from "react";
+'use client'
+
+import React, { useEffect, useState } from "react";
+import { usePathname } from 'next/navigation';
 import '@styles/globals.css';
 import { LeftSidebar } from "./components/LeftSidebar/LeftSidebar";
 import Providers from "./Providers";
+import useScreenWidth from "./hooks/useScreenWidth";
 
 export const metadata = {
   title: "PetsPaw",
-  description: 'Hello, i am cat API project'
+  description: 'Hello, I am a cat API project'
 }
 
 export default function RootLayout({ children }) {
+  const pathname = usePathname();
+  const [isHomePage, setIsHomePage] = useState(true);
+  const width = useScreenWidth();
+  const isWideScreen = width >= 1024;
+  const isHomePath = pathname === '/';
+  const shouldRenderLeftSidebar = isWideScreen;
+
+  useEffect(() => {
+    setIsHomePage(pathname === '/');
+  }, [pathname]);
+
   return (
     <html 
       lang='en'
@@ -23,13 +38,14 @@ export default function RootLayout({ children }) {
           app flex bg-white-soft dark:bg-black relative dark:text-white 
           w-full 
           p-[20px] 
-          md:pr-[30px] md:pt-[30px]
-          md:pl-[147px]
+          md:p-[30px]
         '>
-          <LeftSidebar></LeftSidebar>
-          <div className='w-[calc(100%-60px)] h-[calc(100%-80px)] hidden lg:flex'>
-            {children}
-          </div>
+          {shouldRenderLeftSidebar && <LeftSidebar />}
+          {shouldRenderLeftSidebar && children}
+
+          {isHomePath && !isWideScreen && <LeftSidebar />}
+
+          {!isHomePath && !isWideScreen && children}
         </body>
       </Providers>
     </html>

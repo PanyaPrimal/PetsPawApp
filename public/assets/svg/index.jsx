@@ -99,7 +99,7 @@ export const LeftArrowSvg = ({
 );
 
 export const SearchSvg = ({
-	color = "#FF868E",
+	color,
 	...props
 }) => (
 	<svg
@@ -116,7 +116,7 @@ export const SearchSvg = ({
 );
 
 export const CloseSvg = ({ 
-	color = "#FF868E",
+	color,
 	...props
 }) => (
 	<svg
@@ -416,3 +416,24 @@ export const ThemeTogglerLeft = ({ ...props }) => (
     />
   </svg>
 )
+
+export const BurgerMenuSvg = ({ 
+  size = 30,
+	color = "#FF868E", 
+  ...props
+}) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 30 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      fill={color}
+      clipRule="evenodd"
+      d="M30 2H0V0H30V2ZM30 10H0V8H30V10ZM30 18H0V16H30V18Z"
+    />
+  </svg>
+);

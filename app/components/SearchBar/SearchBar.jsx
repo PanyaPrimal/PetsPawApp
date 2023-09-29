@@ -1,7 +1,6 @@
-'use client'
 
 import React, {useEffect, useState } from 'react'
-import styles from './searchBar.module.scss'
+import styles from './SearchBar.module.scss'
 import Button from '../ui/Button/Button'
 import { useRouter } from 'next/navigation'
 import { SearchSvg } from '../../../public/assets/svg';

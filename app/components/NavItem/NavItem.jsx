@@ -5,7 +5,7 @@ import React from 'react';
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./NavItem.module.scss";
-import NavButton from "../Button/button";
+import NavButton from "../NavButton/NavButton";
 
 const NavItem = ({
   path,
@@ -44,7 +44,6 @@ const NavItem = ({
       <NavButton
         className={`
           ${styles.navButton}
-        dark:hover:bg-blue-500 dark:bg-black-soft
         `}
         buttonText={buttonText}
       />

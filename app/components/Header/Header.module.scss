@@ -1,0 +1,15 @@
+.header {
+	@apply w-full flex flex-wrap gap-[10px] content-between mb-[10px];
+
+	a {
+		@apply h-[60px] w-[60px] rounded-[20px];
+	}
+}
+
+.active {
+	@apply bg-primary text-primary-soft #{!important};
+
+	svg {
+		@apply fill-primary-soft #{!important};
+	}
+}

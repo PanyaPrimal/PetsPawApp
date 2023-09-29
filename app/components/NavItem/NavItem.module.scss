@@ -12,9 +12,7 @@
     }
 
     .navButton {
-      color: #FFF;
-      border-radius: 10px;
-      background: #FF868E;
+      @apply text-white bg-primary gdark:bg-primary
     }
   }
 
@@ -24,9 +22,7 @@
     }
 
     .navButton {
-      color: #FF868E;
-      border-radius: 10px;
-      background: #FBE0DC;
+      @apply text-primary bg-primary-soft;
     }
   }
 }
@@ -47,9 +43,8 @@
 }
 
 .navButton {
-  @apply bg-white 3sm:max-md:mb-5 py-2 sm:max-md:py-3;
+  @apply text-primary bg-white gdark:bg-black-light 3sm:max-md:mb-5 py-2 sm:max-md:py-3;
   width: 100%;
-  color: #FF868E;
   text-align: center;
   font-size: 12px;
   font-weight: 500;
@@ -57,4 +52,3 @@
   text-transform: uppercase;
   border-radius: 10px;
 }
-

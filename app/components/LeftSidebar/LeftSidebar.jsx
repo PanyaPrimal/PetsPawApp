@@ -5,7 +5,7 @@ import { ThemeToggler } from '../ThemeToggler/ThemeToggler';
 
 export const LeftSidebar = () => {
   return (
-    <aside className='flex flex-col 2sm:max-lg:w-full md:pl-[147px] md:max-lg:pr-[147px]'>
+    <aside className='flex flex-col 2sm:max-lg:w-full md:pl-[147px] md:max-md:pr-[147px]'>
       <div className='flex justify-between'>
         <Logo />
         <ThemeToggler />

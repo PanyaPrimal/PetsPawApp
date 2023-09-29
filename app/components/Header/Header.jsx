@@ -30,17 +30,23 @@ export const Header = (props) => {
     <header {...props} className={`
       ${headerClasses}
     `}>
-      <Button
-        className='hidden
-        bg-white dark:bg-black-soft '
-        color='default'
-        aria-label='open menu'
-        onClick={''}
-      >
-        <BurgerMenuSvg />
-      </Button>
+      {screenWidth < 1024 && (
+          <Button
+            className='bg-white dark:bg-black-soft'
+            color='default'
+            aria-label='open menu'
+            onClick={''}
+          >
+            <BurgerMenuSvg />
+          </Button>
+      )}
+          <div className='3sm:max-md:hidden w-full'>
+            <SearchBar />
+          </div>
 
-      <nav className="ml-auto child:mr-[10px] last:mr-0">
+      <nav className={classNames({
+        'flex flex-nowrap ml-auto gap-[10px]': true,
+      })}>
         <Link href="/likes" passHref>
           <Button
             className={getActiveClass(classes.active, "/likes")}
@@ -75,9 +81,12 @@ export const Header = (props) => {
           </Button>
         </Link>
       </nav>
-      <div className='w-full'>
-        <SearchBar />
-      </div>
+
+      {screenWidth < 1024 && (
+        <div className='w-full md:hidden'>
+          <SearchBar />
+        </div>
+      )}
     </header>
   );
 };

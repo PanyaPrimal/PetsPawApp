@@ -32,7 +32,7 @@ export const Header = (props) => {
     `}>
       {screenWidth < 1024 && (
           <Button
-            className='bg-white dark:bg-black-soft'
+            className='3sm:max-lg:w-[60px] rounded-[20px]'
             color='default'
             aria-label='open menu'
             onClick={''}
@@ -49,10 +49,9 @@ export const Header = (props) => {
       })}>
         <Link href="/likes" passHref>
           <Button
-            className={getActiveClass(classes.active, "/likes")}
+            className={`${getActiveClass(classes.active, "/likes")}, w-full h-full rounded-[20px]`}
             color="default"
             aria-label="likes"
-            component="a"
           >
             <LikeSvg />
           </Button>
@@ -60,10 +59,9 @@ export const Header = (props) => {
 
         <Link href="/favourites" passHref>
           <Button
-            className={getActiveClass(classes.active, "/favourites")}
+            className={`${getActiveClass(classes.active, "/favourites")}, w-full h-full rounded-[20px]`}
             color="default"
             aria-label="favourites"
-            component="a"
             onClick={() => console.log(router.pathname)}
           >
             <FavoriteHeartSvgEmpty />
@@ -72,10 +70,9 @@ export const Header = (props) => {
 
         <Link href="/dislikes" passHref>
           <Button
-            className={getActiveClass(classes.active, "/dislikes")}
+            className={`${getActiveClass(classes.active, "/dislikes")}, , w-full h-full rounded-[20px]`}
             color="default"
             aria-label="dislikes"
-            component="a"
           >
             <DislikeSvg />
           </Button>

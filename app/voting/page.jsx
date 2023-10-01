@@ -4,6 +4,10 @@ import { useEffect, useState } from 'react';
 import { ImageService } from '@service/image.service';
 import { VoteService } from '@service/vote.service';
 import PageContainer from '@app/components/PageContainer/PageContainer';
+import Button from '@app/components/ui/Button/Button';
+import styles from './Voting.module.scss'
+import { DislikeSvg, FavoriteHeartSvgEmpty, LikeSvg } from '@public/assets/svg';
+import Image from 'next/image';
 
 const VotingPage = () => {
   const [image, setImage] = useState(null);
@@ -52,18 +56,41 @@ const VotingPage = () => {
 
   return (
     <PageContainer>
-      <h1>Voting Page</h1>
+
       {image && (
-        <div>
-          <img src={image.url} alt="Cat" />
-          <div>
-            <button onClick={() => handleVote(1)}>Up</button>
-            <button onClick={() => handleVote(-1)}>Down</button>
+        <div className={styles.voting}>
+          <div className={styles.voting__image}>
+            <Image 
+              src={image?.url ? image.url : ""}
+              alt="Cat"
+              width={360}
+              height={360}
+            />
           </div>
-          <p>Current Vote: {voteValue}</p>
+          <div className={styles.voting__buttons}>
+            <Button
+              aria-label='vote like'
+              onClick={() => handleVote(1)}
+            >
+              <LikeSvg color='white'/>
+            </Button>
+
+            <Button
+              aria-label='open menu'
+              onClick={''}
+            >
+              <FavoriteHeartSvgEmpty />
+            </Button>
+
+            <Button
+              aria-label='vote dislike'
+              onClick={() => handleVote(-1)}
+            >
+              <DislikeSvg />
+            </Button>
+          </div>
         </div>
       )}
-      <button onClick={fetchRandomImage}>Load Another Image</button>
     </PageContainer>
   );
 };

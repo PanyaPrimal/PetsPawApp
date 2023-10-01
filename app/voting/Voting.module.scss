@@ -1,0 +1,65 @@
+.voting {
+  @apply relative w-full;
+  
+  &__image {
+		@apply relative m-auto max-w-full max-h-[360px] w-auto flex items-center 
+      justify-center overflow-hidden 3sm:max-sm:h-[166px];
+
+		img {
+			@apply rounded-[20px] 3sm:max-md:rounded-[10px];
+		}
+	}
+  
+	&__buttons {
+		@apply absolute 3sm:max-sm:bottom-[-30px] bottom-[-38px] right-2/4 translate-x-1/2 flex gap-[4px] 
+      rounded-[25px] 3sm:max-md:rounded-[12px] bg-white border-[4px]
+       border-white gdark:bg-black gdark:border-black;
+
+		button {
+			@apply p-[25px] rounded-none 3sm:max-md:p-[15px];
+
+			svg {
+				@apply fill-white opacity-50;
+			}
+		}
+
+		button:first-child {
+			@apply bg-success rounded-tl-[20px] rounded-bl-[20px]
+        3sm:max-md:rounded-tl-[10px] 3sm:max-md:rounded-bl-[10px];
+
+      &:hover {
+        @apply bg-success bg-opacity-30;
+
+        svg {
+          @apply fill-success;
+        }
+      }
+			
+		}
+
+		button:nth-child(2) {
+			@apply bg-primary;
+
+      &:hover {
+        @apply bg-primary bg-opacity-30;
+
+        svg {
+          @apply fill-primary;
+        }
+      }
+		}
+
+		button:last-child {
+			@apply bg-warning  rounded-tr-[20px] rounded-br-[20px]
+        3sm:max-md:rounded-tr-[10px] 3sm:max-md:rounded-br-[10px];
+
+      &:hover {
+        @apply bg-warning bg-opacity-30;
+
+        svg {
+          @apply fill-warning;
+        }
+      }
+		}
+	}
+}

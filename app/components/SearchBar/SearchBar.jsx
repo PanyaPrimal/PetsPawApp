@@ -47,7 +47,11 @@ const SearchBar = ({ ...props }) => {
 				onFocus={() => setFocus(true)}
 				onBlur={() => setFocus(false)}
 			/>
-			<Button color='primarySoft' aria-label='search'>
+			<Button 
+        className='rounded-[10px]'
+        color='primarySoft'
+        aria-label='search'
+      >
 				<SearchSvg />
 			</Button>
 		</form>

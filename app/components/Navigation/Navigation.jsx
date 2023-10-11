@@ -1,9 +1,19 @@
 import React from 'react';
 import NavItem from '../NavItem/NavItem';
+import { useAppDispatch } from '@app/hooks/reduxHooks';
+import { closeBurger } from '@app/store/reducers/burgerSlice';
 
-export const Navigation = () =>{
+export const Navigation = ({...props}) =>{
+  const dispatch = useAppDispatch();
+
+  const handleLinkClick = () => {
+    dispatch(closeBurger());
+  };
+
   return (
-    <nav className='md:flex justify-around'>
+    <nav className='md:flex justify-around'
+      onClick={handleLinkClick}
+    >
       <NavItem
         height="124"
         width="100"

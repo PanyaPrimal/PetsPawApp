@@ -9,10 +9,10 @@ function Button(
   {
     className,
     children,
-    color = "primary",
+    color = 'primary',
     isLoading,
-    loaderColor = "white",
-    loaderSize = "small",
+    loaderColor = 'white',
+    loaderSize = 'small',
     fullWidth,
     component,
     ...props
@@ -23,12 +23,12 @@ function Button(
   const buttonClasses = `
     ${className === `${className}`}
     ${styles.button}
-    ${props.className || ""}
-    ${color === "primary" ? styles.button__primary : ""}
-    ${color === "primarySoft" ? styles.button__primarySoft : ""}
-    ${color === "default" ? styles.button__default : ""}
-    ${color === "gray" ? styles.button__gray : ""}
-    ${fullWidth ? "w-full" : ""}
+    ${props.className || ''}
+    ${color === 'primary' ? styles.button__primary : ''}
+    ${color === 'primarySoft' ? styles.button__primarySoft : ''}
+    ${color === 'default' ? styles.button__default : ''}
+    ${color === 'gray' ? styles.button__gray : ''}
+    ${fullWidth ? 'w-full' : ''}
     
   `;
 

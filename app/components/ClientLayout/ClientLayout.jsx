@@ -5,6 +5,8 @@ import { usePathname } from 'next/navigation';
 import { LeftSidebar } from "../LeftSidebar/LeftSidebar";
 import Providers from "@app/Providers";
 import useScreenWidth from "@app/hooks/useScreenWidth";
+import { Provider } from 'react-redux';
+import store from "@app/store/store";
 
 export function ClientRootLayout({ children }) {
   const pathname = usePathname();
@@ -27,21 +29,23 @@ export function ClientRootLayout({ children }) {
       <head>
         <link rel='icon' href='/assets/icons/favicon.svg' sizes='any' />
       </head>
-      <Providers>
-        <body className='
-          app flex bg-white-soft dark:bg-black relative dark:text-white 
-          w-full 
-          p-[20px] 
-          md:p-[30px]
-        '>
-          {shouldRenderLeftSidebar && <LeftSidebar />}
-          {shouldRenderLeftSidebar && children}
+      <Provider store={store}>
+        <Providers>
+          <body className='
+            app flex bg-white-soft dark:bg-black relative dark:text-white 
+            w-full 
+            p-[20px] 
+            md:p-[30px]
+          '>
+            {shouldRenderLeftSidebar && <LeftSidebar />}
+            {shouldRenderLeftSidebar && children}
 
-          {isHomePath && !isWideScreen && <LeftSidebar />}
+            {isHomePath && !isWideScreen && <LeftSidebar />}
 
-          {!isHomePath && !isWideScreen && children}
-        </body>
-      </Providers>
+            {!isHomePath && !isWideScreen && children}
+          </body>
+        </Providers>
+      </Provider>
     </html>
   )
 }

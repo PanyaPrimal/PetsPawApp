@@ -8,6 +8,13 @@ import Button from '@app/components/ui/Button/Button';
 import styles from './Voting.module.scss'
 import { DislikeSvg, FavoriteHeartSvgEmpty, LikeSvg } from '@public/assets/svg';
 import Image from 'next/image';
+// import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+// import Loader from '@app/components/ui/Loader/Loader';
+// import { useAppDispatch, useAppSelector } from '@app/hooks/reduxHooks';
+// import { FavouriteService } from '@service/favourite.service';
+// import UserLog from '@app/components/UserLog/UserLog';
+// import { setLog } from '@app/store/reducers/userLogSlice';
+// import { setIsFavourite } from '@app/store/reducers/isFavouriteSlice';
 
 const VotingPage = () => {
   const [image, setImage] = useState(null);

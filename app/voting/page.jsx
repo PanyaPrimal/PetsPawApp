@@ -8,17 +8,20 @@ import Button from '@app/components/ui/Button/Button';
 import styles from './Voting.module.scss'
 import { DislikeSvg, FavoriteHeartSvgEmpty, LikeSvg } from '@public/assets/svg';
 import Image from 'next/image';
-// import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-// import Loader from '@app/components/ui/Loader/Loader';
-// import { useAppDispatch, useAppSelector } from '@app/hooks/reduxHooks';
-// import { FavouriteService } from '@service/favourite.service';
-// import UserLog from '@app/components/UserLog/UserLog';
-// import { setLog } from '@app/store/reducers/userLogSlice';
-// import { setIsFavourite } from '@app/store/reducers/isFavouriteSlice';
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import Loader from '@app/components/ui/Loader/Loader';
+import { useAppDispatch, useAppSelector } from '@app/hooks/reduxHooks';
+import { FavouriteService } from '@service/favourite.service';
+import UserLog from '@app/components/UserLog/UserLog';
+import { setLog } from '@app/store/reducers/userLogSlice';
+import { setIsFavourite } from '@app/store/reducers/isFavouriteSlice';
 
 const VotingPage = () => {
+  const queryClient = useQueryClient();
   const [image, setImage] = useState(null);
   const [voteValue, setVoteValue] = useState(0);
+  const { isPending, error, data } = useQuery({queryFn: () => 
+    ImageService.getImages({limit : 1}).then(response => response)});
 
   const fetchRandomImage = async () => {
     try {
@@ -36,11 +39,9 @@ const VotingPage = () => {
   };  
   
   useEffect(() => {
-    if (!image) {
-      console.log('Fetching random image...');
-      fetchRandomImage();
-    }
-  }, [image]);
+      console.log('data income', data, isPending, error);
+     fetchRandomImage();
+  }, [isPending]);
 
   const handleVote = async (value) => {
     try {
@@ -63,7 +64,6 @@ const VotingPage = () => {
 
   return (
     <PageContainer>
-
       {image && (
         <div className={styles.voting}>
           <div className={styles.voting__image}>

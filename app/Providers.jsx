@@ -5,7 +5,6 @@ import { ThemeProvider } from "next-themes"
 
 const Providers = ({children}) => {
   const [mounted, setMounted] = useState(false)
-
   useEffect(() => setMounted(true), [])
 
   if (!mounted) {
@@ -14,7 +13,7 @@ const Providers = ({children}) => {
 
   return (
     <ThemeProvider attribute="class">
-      {children}
+        {children}
     </ThemeProvider>
   )
 }

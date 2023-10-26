@@ -7,7 +7,6 @@ import { DislikeSvg, FavoriteHeartSvgEmpty, LikeSvg } from '@public/assets/svg';
 const UserLog = ({ ...props }) => {
 	const { logs } = useAppSelector((state) => state.userLog);
 	const userLogClasses = `
-		${styles.userLog}
 		${props.className || ''}
   `
 

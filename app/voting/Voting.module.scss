@@ -2,7 +2,7 @@
   @apply relative w-full;
   
   &__image {
-		@apply relative m-auto max-w-full max-h-[360px] w-auto flex items-center 
+		@apply relative m-auto max-w-full max-h-[360px] xl:max-h-[560px] w-auto flex items-center 
       justify-center overflow-hidden 3sm:max-sm:h-[166px];
 
 		img {

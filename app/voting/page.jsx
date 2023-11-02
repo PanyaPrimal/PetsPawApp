@@ -127,14 +127,13 @@ const VotingPage = () => {
 			})
 		);
 	}, [setFavourite.data]);
-
   
   return (
     <PageContainer>
         <div className={styles.voting}>
           <div className={styles.voting__image}>
             {loading ? (
-              <Loader  className='w-full 3sm:max-md:h-[560px] md:h-[400px]'/>
+              <Loader/>
             ) : (
               <Image 
                 src={data?.[0].url ? data?.[0].url : ""}

@@ -1,6 +1,5 @@
-
 import React from 'react';
-import styles from "./userLogItem.module.scss";
+import styles from "./UserLogItem.module.scss";
 
 const UserLogItem = ({
 	icon,
@@ -17,6 +16,7 @@ const UserLogItem = ({
 	${color === "white" ?	"bg-white" : '' }
   ${props.className || ''}
 `
+
 	return (
 		<div className={userLogItemClasses} {...props}>
 			{iconPosition === "start" && icon}

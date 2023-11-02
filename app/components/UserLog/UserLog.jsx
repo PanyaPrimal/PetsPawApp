@@ -1,6 +1,6 @@
 import React from 'react';
-import Stack from '../ui/stack/stack';
-import UserLogItem from './userLogItem';
+import Stack from '../ui/Stack/Stack';
+import UserLogItem from './UserLogItem';
 import { useAppSelector } from '@app/hooks/reduxHooks';
 import { DislikeSvg, FavoriteHeartSvgEmpty, LikeSvg } from '@public/assets/svg';
 

@@ -1,5 +1,7 @@
 .userLogItem {
-	@apply flex items-center flex-wrap gap-[20px] p-5 rounded-[10px] gdark:bg-black-light;
+	@apply block flex items-center flex-wrap content-between gap-[20px] p-[20px] rounded-[10px]
+   gdark:bg-black-light;
+  margin-bottom: 10px;
 
 	&__time {
 		@apply bg-white px-[10px] py-[3px] rounded-[5px] gdark:bg-black;
@@ -14,6 +16,6 @@
 	}
 
 	svg {
-		@apply h-5 w-5 ml-auto;
+		@apply h-[20px] w-[20px] ml-auto;
 	}
 }

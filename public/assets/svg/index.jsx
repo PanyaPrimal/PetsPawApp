@@ -2,7 +2,6 @@ import React from "react";
 import '@styles/globals.css';
 
 export const LikeSvg = ({
-  className, 
 	size = 30,
 	...props
 }) => (

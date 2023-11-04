@@ -1,6 +1,5 @@
-
 import React from 'react';
-import styles from "./userLogItem.module.scss";
+import styles from "./UserLogItem.module.scss";
 
 const UserLogItem = ({
 	icon,
@@ -17,16 +16,16 @@ const UserLogItem = ({
 	${color === "white" ?	"bg-white" : '' }
   ${props.className || ''}
 `
+
 	return (
 		<div className={userLogItemClasses} {...props}>
 			{iconPosition === "start" && icon}
-			{time && <span className={classes.userLogItem__time}>{time}</span>}
-			<p
-				className={classNames({
-					[classes.userLogItem__text]: true,
-					["sm:order-1 sm:min-w-full"]: iconPosition === "end",
-				})}
-			>
+			{time && <span className={styles.userLogItem__time}>{time}</span>}
+			<p className={`
+          ${styles.userLogItem__text}
+					${iconPosition === "end" ? "sm:order-1 sm:min-w-full" : ''}
+        `}
+      >
 				{imageId && (
 					<>
 						Image ID:{" "}

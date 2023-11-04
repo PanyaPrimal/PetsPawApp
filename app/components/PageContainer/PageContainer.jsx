@@ -2,7 +2,12 @@ import React from 'react';
 import { Header } from '@app/components/Header/Header';
 import HeaderContent from '../HeaderContent/HeaderContent';
 
-const PageContainer = ({ children, showHeader = true }) => {
+const PageContainer = ({
+    children,
+    showHeader = true,
+    isBreedsPage = false,
+    isGalleryPage = false
+  }) => {
   return (
     <main className='flex-col w-full h-full lg:max-w-[680px] lg:ml-auto'>
       {showHeader && <Header />}
@@ -13,7 +18,7 @@ const PageContainer = ({ children, showHeader = true }) => {
         dark:bg-black-soft rounded-[20px]
         ${showHeader ? 'bg-white' : ''}
       `}>
-        {showHeader && <HeaderContent />}
+        {showHeader && !isBreedsPage && !isGalleryPage && <HeaderContent />}
         {children}
       </div>
     </main>

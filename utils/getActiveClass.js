@@ -12,9 +12,3 @@ const getActiveClass = (classToAdd, link) => {
 };
 
 export default getActiveClass;
-
-// const currentPath = usePathname();
-
-  //const isActive = (path) => {
- //   return currentPath === path;
-  //};

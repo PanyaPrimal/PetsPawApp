@@ -2,10 +2,11 @@ import api from "./api";
 
 export const FavouriteService = {
 	setFavourite: async ({ image_id, sub_id }) => {
-		const response = await api.post("/favourites", {
-			image_id,
-			sub_id,
-		});
+    const data = { image_id };
+    if (sub_id !== null) {
+      data.sub_id = sub_id;
+    }
+		const response = await api.post("/favourites", data);
 		return response.data;
 	},
 	removeFavourite: async ({ favourite_id }) => {

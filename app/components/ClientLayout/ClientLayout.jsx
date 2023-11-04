@@ -7,6 +7,14 @@ import Providers from "@app/Providers";
 import useScreenWidth from "@app/hooks/useScreenWidth";
 import { Provider } from 'react-redux';
 import store from "@app/store/store";
+import {
+	DehydratedState,
+	Hydrate,
+	QueryClient,
+	QueryClientProvider,
+} from "@tanstack/react-query";
+
+const client = new QueryClient();
 
 export function ClientRootLayout({ children }) {
   const pathname = usePathname();
@@ -37,12 +45,14 @@ export function ClientRootLayout({ children }) {
             p-[20px] 
             md:p-[30px]
           '>
-            {shouldRenderLeftSidebar && <LeftSidebar />}
-            {shouldRenderLeftSidebar && children}
+            <QueryClientProvider client={client}>
+              {shouldRenderLeftSidebar && <LeftSidebar />}
+              {shouldRenderLeftSidebar && children}
 
-            {isHomePath && !isWideScreen && <LeftSidebar />}
+              {isHomePath && !isWideScreen && <LeftSidebar />}
 
-            {!isHomePath && !isWideScreen && children}
+              {!isHomePath && !isWideScreen && children}
+            </QueryClientProvider>
           </body>
         </Providers>
       </Provider>

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '/GridItem.module.scss';
+import styles from './GridItem.module.scss';
 
 const defaultElement = 'div';
 

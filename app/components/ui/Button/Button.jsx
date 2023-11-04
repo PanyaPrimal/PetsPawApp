@@ -21,15 +21,13 @@ function Button(
 ) {
   const TagName = component || defaultElement;
   const buttonClasses = `
-    ${className === `${className}`}
     ${styles.button}
-    ${props.className || ''}
     ${color === 'primary' ? styles.button__primary : ''}
     ${color === 'primarySoft' ? styles.button__primarySoft : ''}
     ${color === 'default' ? styles.button__default : ''}
     ${color === 'gray' ? styles.button__gray : ''}
     ${fullWidth ? 'w-full' : ''}
-    
+    ${props.className || ''}
   `;
 
   return (

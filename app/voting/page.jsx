@@ -9,7 +9,7 @@ import Button from '@app/components/ui/Button/Button';
 import styles from './Voting.module.scss'
 import { DislikeSvg, FavoriteHeartSvgEmpty, FavoriteHeartSvgFilled, LikeSvg } from '@public/assets/svg';
 import Image from 'next/image';
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useAppDispatch, useAppSelector } from '@app/hooks/reduxHooks';
 import { setLog } from '@app/store/reducers/userLogSlice';
 import { setIsFavourite } from '@app/store/reducers/isFavouriteSlice';
@@ -25,7 +25,7 @@ const VotingPage = () => {
 	);
 
   const { data, isLoading, isFetching } = useQuery({
-		queryKey: ["image"],
+		queryKey: ['image'],
 		queryFn: () =>
 			ImageService.getImages({
 				limit: 1,
@@ -41,7 +41,7 @@ const VotingPage = () => {
 				value,
 			}),
 		onSuccess: () => {
-			queryClient.invalidateQueries({ queryKey: ["image"] });
+			queryClient.invalidateQueries({ queryKey: ['image'] });
 		},
 		onMutate: () => {
 			dispatch(setIsFavourite({ value: false, id: null }));
@@ -65,8 +65,8 @@ const VotingPage = () => {
 				setLog({
 					createdAt: `${new Date().getHours()}:${new Date().getMinutes()}`,
 					imageId: data[0].id,
-					message: "was added to Favourites",
-					value: "favourite",
+					message: 'was added to Favourites',
+					value: 'favourite',
 				})
 			);
 		},
@@ -83,7 +83,7 @@ const VotingPage = () => {
 				setLog({
 					createdAt: `${new Date().getHours()}:${new Date().getMinutes()}`,
 					imageId: data[0].id,
-					message: "was removed from Favourites",
+					message: 'was removed from Favourites',
 				})
 			);
 		},
@@ -101,8 +101,8 @@ const VotingPage = () => {
 				setLog({
 					createdAt: `${new Date().getHours()}:${new Date().getMinutes()}`,
 					imageId: data[0].id,
-					message: "was added to Likes",
-					value: "like",
+					message: 'was added to Likes',
+					value: 'like',
 				})
 			);
 		} else {
@@ -110,8 +110,8 @@ const VotingPage = () => {
 				setLog({
 					createdAt: `${new Date().getHours()}:${new Date().getMinutes()}`,
 					imageId: data[0].id,
-					message: "was added to Dislikes",
-					value: "dislike",
+					message: 'was added to Dislikes',
+					value: 'dislike',
 				})
 			);
 		}
@@ -136,12 +136,12 @@ const VotingPage = () => {
               <Loader/>
             ) : (
               <Image 
-                src={data?.[0].url ? data?.[0].url : ""}
-                alt="voting cat image"
+                src={data?.[0].url ? data?.[0].url : ''}
+                alt='voting cat image'
                 height={560}
                 width={560}
-                placeholder="blur"
-                blurDataURL={data?.[0].url ? data?.[0].url : ""}
+                placeholder='blur'
+                blurDataURL={data?.[0].url ? data?.[0].url : ''}
               />
             )}
           </div>
@@ -185,8 +185,8 @@ const VotingPage = () => {
             >
               {setFavourite.isLoading || removeFavourite.isLoading ? (
                 <Loader
-                  color="white"
-                  className="!h-[30px] !w-[30px]"
+                  color='white'
+                  className='!h-[30px] !w-[30px]'
                 />
               ) : isFavourite ? (
                 <FavoriteHeartSvgFilled />
@@ -211,7 +211,7 @@ const VotingPage = () => {
           </div>
         </div>
 
-        <UserLog className="mt-[50px]" />
+        <UserLog className='mt-[50px]' />
     </PageContainer>
   );
 };

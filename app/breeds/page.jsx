@@ -17,10 +17,6 @@ import GridItem from '@app/components/Grid/GridItem';
 import UserLogItem from '@app/components/UserLog/UserLogItem';
 import HeaderContent from '@app/components/HeaderContent/HeaderContent';
 
-export const metadata = {
-  title: 'Breeds',
-}
-
 const BreedsPage = () => {
   const [options, setOptions] = useState({
     breed: '',

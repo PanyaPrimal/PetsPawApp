@@ -1,6 +1,7 @@
 .grid {
 	display: grid;
-	@apply gap-[20px] auto-rows-[140px] grid-cols-3 sm:flex sm:flex-col sm:flex-wrap;
+  
+	@apply sm:gap-[10px] xl:gap-[20px] auto-rows-[140px] grid-cols-3 sm:pb-[10px] xl:pb-[20px];
 
 	div:nth-child(1),
 	a:nth-child(1) {

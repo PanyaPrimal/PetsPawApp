@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import PageContainer from '@app/components/PageContainer/PageContainer';
+import useScreenWidth from "@app/hooks/useScreenWidth";
 import Select from '@app/components/ui/Select/select';
 import Button from '@app/components/ui/Button/Button';
 import Image from 'next/image';
@@ -18,6 +19,8 @@ import UserLogItem from '@app/components/UserLog/UserLogItem';
 import HeaderContent from '@app/components/HeaderContent/HeaderContent';
 
 const BreedsPage = () => {
+  const width = useScreenWidth();
+  const isMobileScreen = width < 640;
   const [options, setOptions] = useState({
     breed: '',
     limit: 5,
@@ -48,6 +51,7 @@ const BreedsPage = () => {
         10
       ),
   });
+  console.log(breeds);
 
 	const breedsHeaders = useQuery({
 		queryKey: ['breedsHeaders', options],
@@ -89,7 +93,7 @@ const BreedsPage = () => {
         'headers'
       ),
   });
-
+ 
   const data = options.breed ? images.data : breeds.data;
 
   const paginationLimit = Math.floor(
@@ -111,9 +115,9 @@ const BreedsPage = () => {
   imagesHeaders.isFetching;
 
   return (
-    <PageContainer isBreedsPage className='flex flex-row gap-[5px]'>
+    <PageContainer isBreedsPage className='flex flex-row justify-center content-between gap-[5px] h-[90%]'>
       <div className='flex flex-wrap justify-between'>
-        <HeaderContent className={``}/>
+        <HeaderContent />
         <Select
             value={options.breed}
             onChange={(e) =>
@@ -186,12 +190,18 @@ const BreedsPage = () => {
             <DescendSvg />
           </Button>
       </div>
-      
+
       {isLoading ? (
-				<Loader centered />
-			) : data?.length ? (
+				<Loader 
+          centered
+          position = 'centredInGrids'
+        />
+			) : isMobileScreen && data?.length ? (
 				data.map((grid, i) => (
-					<Grid className='mt-[20px] w-full' key={i}>
+					<div 
+            className='h-[206px] my-[10px]'
+            key={i}
+          >
 						{grid.map((item) => (
 							<Link
 								key={item.id}
@@ -209,25 +219,71 @@ const BreedsPage = () => {
 											: item.name
 									}
 								>
-									<Image
-										src={
+                  <img 
+                    placeholder='blur'
+                    src={
 											options.breed
 												? item.url
 												: item?.image.url
 										}
-										layout='fill'
-										placeholder='blur'
-										blurDataURL={
-											options.breed
-												? item.url
-												: item?.image.url
-										}
-										alt={
+                    alt={
 											options.breed
 												? item?.breeds[0].name
 												: item.name
 										}
-									/>
+                    blurDataURL={
+											options.breed
+												? item.url
+												: item?.image.url
+										}
+                    className='h-full w-full object-cover'
+                  >
+                  </img>
+								</GridItem>
+							</Link>
+						))}
+					</div>
+				))
+			) : data?.length ? (
+				data.map((grid, i) => (
+					<Grid key={i}>
+						{grid.map((item) => (
+							<Link
+								key={item.id}
+								href={`breeds/${
+									options.breed ? item?.breeds[0].id : item.id
+								}`}
+								passHref
+							>
+								<GridItem
+									component='a'
+									isHoverable
+									title={
+										options.breed
+											? item?.breeds[0].name
+											: item.name
+									}
+								>
+                  <img 
+                    placeholder='blur'
+                    src={
+											options.breed
+												? item.url
+												: item?.image.url
+										}
+                    alt={
+											options.breed
+												? item?.breeds[0].name
+												: item.name
+										}
+                    blurDataURL={
+											options.breed
+												? item.url
+												: item?.image.url
+										}
+                    className='h-full w-full object-cover'
+                  >
+                  </img>
 								</GridItem>
 							</Link>
 						))}
@@ -238,10 +294,10 @@ const BreedsPage = () => {
 			)}
 
 			{!isLoading && (
-				<div className='mt-[20px] flex items-center justify-evenly w-fit'>
+				<div className='flex justify-center items-center gap-[10px]'>
 					<Button
-            className={'w-fit'}
-						variant='primarySoft'
+            className={'w-fit rounded-[10px]'}
+						color='primarySoft'
 						disabled={isLoading || options.page === 0}
 						onClick={() =>
 							setOptions({ ...options, page: options.page - 1 })
@@ -251,8 +307,8 @@ const BreedsPage = () => {
 					</Button>
 
 					<Button
-            className={'w-fit'}
-						variant='primarySoft'
+            className={'w-fit rounded-[10px]'}
+						color='primarySoft'
 						disabled={isLoading || options.page === paginationLimit}
 						onClick={() =>
 							setOptions({ ...options, page: options.page + 1 })

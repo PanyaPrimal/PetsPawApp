@@ -48,7 +48,6 @@ const VotingPage = () => {
 		},
 	});
 
-  
 	const setFavourite = useMutation({
 		mutationFn: ({ image_id, sub_id }) =>
 			FavouriteService.setFavourite({

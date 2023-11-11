@@ -18,6 +18,6 @@ export const BreedService = {
 			},
 		});
 
-		return returnValue === "headers" ? response.headers : response.data;
+		return response.data;
 	},
 };

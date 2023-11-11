@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { Children } from 'react'
 import BackButton from '../BackButton/BackButton'
 import HeaderTag from '../HeaderTag/HeaderTag'
 
-const HeaderContent = ({ ...props }) => {
+const HeaderContent = ({ children, ...props }) => {
   const headerContentClasses = `${props.className || ''}`
 
   return (
@@ -12,6 +12,7 @@ const HeaderContent = ({ ...props }) => {
     `}>
       <BackButton />
       <HeaderTag color="primary"></HeaderTag>
+      { children }
     </div>
   )
 }

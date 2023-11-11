@@ -1,26 +1,25 @@
 .grid__item {
-	@apply relative rounded-[20px] outline-none overflow-hidden min-h-[140px] w-full sm:min-h-[210px];
+	@apply relative rounded-[20px] outline-none overflow-hidden 
+  h-full w-full inline-block;
 
 	&__wrapper {
 		@apply p-[10px];
 	}
 
 	&__hover {
-		@media (hover: hover) {
-			&:hover,
-			&:focus-within {
-				.grid__item__wrapper {
-					@apply absolute inset-0 bg-primary bg-opacity-50 transition-colors;
-				}
+    &:hover,
+    &:focus-within {
+      .grid__item__wrapper {
+        @apply absolute inset-0 bg-primary bg-opacity-50 transition-colors;
+      }
 
-				.grid__item__action {
-					@apply block;
-				}
+      .grid__item__action {
+        @apply block;
+      }
 
-				.grid__item__title {
-					@apply visible bottom-[10px];
-				}
-			}
+      .grid__item__title {
+        @apply visible bottom-[10px];
+      }
 		}
 	}
 

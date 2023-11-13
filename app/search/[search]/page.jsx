@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import PageContainer from '@app/components/PageContainer/PageContainer';
 import { useQueries, useQuery } from "@tanstack/react-query";
@@ -91,4 +93,4 @@ const SearchPage = ({ name }) => {
   );
 };
 
-export default SearchPage;1
+export default SearchPage;

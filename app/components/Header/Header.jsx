@@ -76,7 +76,6 @@ export const Header = ({ ...props}) => {
               className={`${getActiveClass(styles.active, "/favourites")}, w-full h-full rounded-[20px]`}
               color="default"
               aria-label="favourites"
-              onClick={() => console.log(router.pathname)}
             >
               <FavoriteHeartSvgEmpty />
             </Button>

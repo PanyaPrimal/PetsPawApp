@@ -7,16 +7,16 @@ import { LeftArrowSvg } from '@public/assets/svg';
 
 const BackButton = ({ ...props }) => {
   const router = useRouter();
-  const backButtonClasses = `${props.className || ''}`
+  const backButtonStyles = `${props.className || ''}`
 
   return (
 		<>
-			{router.pathname !== "/" && (
+			{router.pathname !== '/' && (
 				<Button
-					className={`${backButtonClasses} rounded-[10px]`}
-					color="primarySoft"
+					className={`${backButtonStyles} rounded-[10px]`}
+					color='primarySoft'
           onClick={() => router.back()}
-					aria-label="back"
+					aria-label='back'
 					{...props}
 				>
 					<LeftArrowSvg />

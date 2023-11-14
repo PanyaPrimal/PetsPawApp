@@ -5,7 +5,6 @@ import PageContainer from '@app/components/PageContainer/PageContainer';
 import useScreenWidth from "@app/hooks/useScreenWidth";
 import Select from '@app/components/ui/Select/select';
 import Button from '@app/components/ui/Button/Button';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useQuery } from '@tanstack/react-query';
 import { BreedService } from '@service/breed.service';
@@ -51,7 +50,6 @@ const BreedsPage = () => {
         10
       ),
   });
-  console.log(breeds);
 
 	const breedsHeaders = useQuery({
 		queryKey: ['breedsHeaders', options],

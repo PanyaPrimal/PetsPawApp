@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import PageContainer from '@app/components/PageContainer/PageContainer';
 import { useQueries, useQuery } from "@tanstack/react-query";
@@ -10,10 +12,6 @@ import GridItem from '@app/components/Grid/GridItem';
 import Image from 'next/image';
 import Link from 'next/link';
 import UserLogItem from '@app/components/UserLog/UserLogItem';
-
-export const metadata = {
-  title: 'Search',
-};
 
 const SearchPage = ({ name }) => {
   const breed = useQuery({
@@ -91,4 +89,4 @@ const SearchPage = ({ name }) => {
   );
 };
 
-export default SearchPage;1
+export default SearchPage;

@@ -13,10 +13,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import UserLogItem from '@app/components/UserLog/UserLogItem';
 
-export const metadata = {
-  title: 'Search',
-};
-
 const SearchPage = ({ name }) => {
   const breed = useQuery({
     queryKey: ["breed", name],

@@ -33,4 +33,14 @@ export const ImageService = {
 		const response = await api.get(`/images/${id}`);
 		return response.data;
 	},
+  uploadImage: async (file, subId) => {
+		const formData = new FormData();
+		formData.append("file", file);
+		formData.append("sub_id", subId || "");
+		const response = await api.post(
+			"/images/upload",
+			formData
+		);
+		return response.data;
+	},
 };

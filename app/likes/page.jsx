@@ -13,10 +13,6 @@ import Loader from '@app/components/ui/Loader/Loader';
 import Image from 'next/image';
 import useScreenWidth from '@app/hooks/useScreenWidth';
 
-export const metadata = {
-  title: 'Likes',
-}
-
 const LikesPage = () => {
   const width = useScreenWidth();
   const isMobileScreen = width < 640;
